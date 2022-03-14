@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulario1.css">
+    <!--<link rel="stylesheet" href="normalize.css">-->
+    <title>Formulario de validación</title>
+</head>
+
+<body>
+
+    <!--Para nombrar las clases para modificar con CSS se utilizo la metodología BEM-->
+
+    <!--Para nombrar lis id de los input se utilizo la metodología BEM-->
+
+    <!--Se diseño el formulario tipo bloque para modificar en CSS-->
+
+
+    <form action="" method="POST" id="form">
+        <div class="form">
+            <fieldset>
+                <legend class="titulo">FORMULARIO</legend>
+            </fieldset>
+
+            <div class="grupo">
+                <fieldset class="content__datos">
+                    <!--La etiqueta legend creara un subtitulo en un modelo de caja-->
+                    <legend>Datos del usuario</legend>
+
+                    <!--le preguntara al usuario el nombre-->
+                    <label for="nombre_usuario">Primer nombre</label>
+                    <!--la propiedad placeholder aplica una marca de agua, para indicarle al usuario que debe poner en cada campo-->
+                    <input type="text" id="nombre_usuario" requiered="requiered" class="input__nom"><span class="barra"></span></input>
+                    <br>
+                    <br>
+
+                    <!--Apellidos del usuario-->
+                    <label for="apellidos_usuario">Apellidos</label>
+                    <!--el requiered es para especificar que el campo a rellenar es obligatorio-->
+                    <input type="text" id="apellidos_usuario" requiered="requiered" class="input__nom"><span class="barra"></span></input>
+                    <br>
+                    <br>
+
+                    <!--Edad del usuario-->
+                    <label for="edad_usuario">Edad</label>
+                    <!--se le añadio los min y max para la edad para evitar que menores de edad llenen el formulario, para evitarnos hacer un condicional-->
+                    <input type="number" id="edad_usuario" min="18" max="+99" class="input__nom"></input>
+                </fieldset>
+            </div>
+
+
+            <div class="grupo">
+                <fieldset class="content__contactos">
+                    <legend>Contactos</legend>
+
+                    <!--email del usuario-->
+                    <label for="email_usuario">Email</label>
+
+                    <!--Se le agrega al email la propiedad pattern que especificara el patron que debe tener el correo, en este caso @gmail.com-->
+                    <input type="email" id="email_usuario" requiered="requiered" class="input__nom"><span class="barra"></span></input>
+
+                    <!--telefono del usuario-->
+                    <label for="telefono_usuario">Telefono</label>
+
+                    <!--Al igual que al email, se pondrá la propiedad pattern para indicar el patron que debe tener el numero de contacto (numero de celular)-->
+                    <input type="text" id="telefono_usuario" requiered="requiered" class="input__nom"></input>
+                </fieldset>
+            </div>
+
+            <div class="radio__content">
+                <fieldset class="content__licencia">
+
+                    <!--En este campo el usuario seleccionara si cuenta con licencia opciones (si o no)-->
+                    <legend>Selecciona</legend>
+
+                    <p>¿Cuenta usted con una licencia de conducción?</p>
+
+                    <label for="si"></label>
+                    <input type="radio" name="elegir" id="si" value="si">Si</input>
+
+                    <label for="no"></label>
+                    <input type="radio" name="elegir" id="no" value="no">No</input>
+                </fieldset>
+            </div>
+
+            <div class="radio__content">
+                <fieldset class="content__tipoVehiculo">
+
+                    <h3>Seleccione</h3>
+
+                    <p>Si la respuesta de la pregunta anterior fue "Si" deligencie los siguientes datos: </p>
+
+                    <p>Tipo de permiso de conducción: </p>
+                    <label for="tipo_licencia_moto"></label>
+                    <input type="radio" id="tipo_licencia_moto" value="moto">Moto</input> <br>
+
+                    <label for="tipo_licencia_carro"></label>
+                    <input type="radio" id="tipo_licencia_carro" value="carro">Carro</input><br>
+
+                </fieldset>
+            </div>
+
+
+            <div class="fecha__expiracion">
+                <fieldset>
+                    <legend>Fecha de expiración licencia</legend>
+
+                    <p>Por favor diligencie la fecha de expiración de su licencia (moto o carro):</p>
+
+                    <label for="expira_lic">Fecha de expiración licencia</label>
+                    <input type="date" id="expira_lic" requiered="requiered" min="2021-05-20" max=""></input> <br>
+
+                    <pre id="salida"></pre>
+                </fieldset>
+            </div>
+
+            <button type="submit" class="content__button btn">Enviar</button>
+
+
+
+
+        </div>
+    </form>
+
+
+    <script src="formulario1.js"></script>
+
+
+    </script>
+</body>
+
+</html>

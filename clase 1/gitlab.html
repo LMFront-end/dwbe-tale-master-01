@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Comandos gitLab</title>
+</head>
+
+<body>
+    <h1 class="title">Comandos de git</h1>
+
+    <h3>git global setup</h3>
+
+    <ul>
+        <il>git config --global user.name "Lina María Guerrero López"</il><br>
+        <il>git config --global user.email "guerrerolopezlinamaria@gmail.com"</il>
+
+    </ul>
+
+    <h3>create a new repository</h3>
+
+    <ul>
+        <il>git clone https://gitlab.com/guerrerolopezlinamaria/dwbe-tale-01.git</il>
+        <il>cd dwbe-tale-01</il><br>
+        <il>touch README.md</il><br>
+        <il>git add README.md</il><br>
+        <il>git commit -m "add README"</il><br>
+        <il>git push -u origin master</il><br>
+    </ul>
+    <hr>
+    <h3>Push an existing folder</h3>
+    <ul>
+        <il>cd existing_folder</il><br>
+        <il>git init</il><br>
+        <il>git remote add origin https://gitlab.com/guerrerolopezlinamaria/dwbe-tale-01.git</il><br>
+        <il>git add .</il><br>
+        <il>git commit -m "Initial commit"</il><br>
+        <il>git push -u origin master</il><br>
+    </ul>
+    <hr>
+
+    <h3>Push an existing Git repository</h3>
+    <ul>
+        <il>cd existing_repo</il><br>
+        <il>git remote rename origin old-origin</il><br>
+        <il>git remote add origin https://gitlab.com/guerrerolopezlinamaria/dwbe-tale-01.git</il><br>
+        <il>git push -u origin --all</il><br>
+        <il>git push -u origin --tags</il><br>
+
+    </ul>
+</body>
+
+</html>

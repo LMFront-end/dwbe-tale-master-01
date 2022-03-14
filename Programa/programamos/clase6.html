@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<h2>Cuadrado</h2>
+<input type='number' name='num1c' id='numCuadrado'>
+<button id='buttonCuadrado'>Cuadrado</button><br>
+<h3 id='impresoCuadrado'></h3>
+
+<br><br>
+
+<h2>Factorial</h2>
+<input type='number' name='num1f' id='numFactorial'>
+<button id='buttonFacrtorial'>Factorial</button><br>
+<h3 id='impresoFactorial'></h3>
+
+<br><br>
+
+<h2>Círculo</h2>
+<input type='number' name='num1C' id='numCirculo'>
+<button id='buttonCirculo'>Cuadrado</button><br>
+<h3 id='impresoCirculo'></h3>
+
+<br><br>
+
+<h2>Usuario y Contraseña</h2>
+<label for="usuarioT">Usuario</label>
+<input type='text' name='usuarioT' id='usuarioT'>
+
+<br><br>
+
+<label for="contraseñaT">Contraseña</label>
+<input type='text' name='contraseñaT' id='contraseñaT'>
+
+<br><br>
+
+<button id='buttonLogin'>Agregar Usuario y Conrtaseña</button>
+<button id='verificarLogin'>Verificar Usuario y Conrtaseña</button> <br><br>
+<h3 id='impresoLogin'></h3>
+<h3 id='impresoVLogin'></h3>
+
+<body>
+
+    <script>
+        //CUADRADO DE UN NÚMERO
+        document.getElementById('buttonCuadrado').addEventListener('click', () => {
+
+
+            //Se utilizó el método de exponenciación para elevar al cuadrado un numero (Js ECMAScript 6).
+
+            //Es una de las tantas formas de elevar un numero al cuadrado.
+
+            function UnNumeroCuadrado(num1) {
+                return num1 ** 2;
+
+                //El método a ** b devuelve el resultado como si se estuviese trabajando con la funcion Math.pow
+
+                /*Sintaxis de Math.pow
+                
+                ejemplo:
+
+                camelCase
+                //forma 1
+                let numeroCuadrado = Math.pow(5,2);
+                console.log("5*5 = ", numeroCuadrado);
+
+                //forma 2
+                let numero = 5;
+                let numeroCuadrado2 = Math.pow(numero, 2);
+                console.log("5*5 = ", numeroCuadrado2);
+                
+                */
+
+            };
+
+            /*El método utilizado de ES6 se representa de la siguiente manera
+            
+            function numeroCuadrado(no){
+                return no ** 2
+            }
+            
+            //Cuando se quiere retornarun resultado, podemos crear una variable para que esta almacene los datos de la función.
+
+            let cuadrado = numeroCuadrado(6);
+            console.log("6 ** 2 = ", cuadrado );
+            
+            */
+            let numeroQ = document.getElementById('numCuadrado').value;
+            let squared = UnNumeroCuadrado(numeroQ);
+
+            document.getElementById('impresoCuadrado').innerHTML = (`El cuadrado de ${numeroQ} es ${squared}`);
+
+        })
+
+        //FACTORIAL DE UN NÚMERO
+
+        //Otra forma de  calcular el factorial de un numero, es con  el método de recursividad, ya que este permite resolver un problema de una manera mas simple e intuitiva. evita usar bucles!
+
+        /*
+        sintaxis de un método recursivo
+
+        function factorialRecursivo(n) {
+            if (n == 0) {
+                return 1;
+            } else {
+                return factorialRecursivo(n - 1) * n;
+            }
+        }
+        
+        */
+        document.getElementById('buttonFacrtorial').addEventListener('click', () => {
+
+            function factorial(n) {
+                for (i = 0; i < n; i++) {
+                    if (n == 0 || n == 1) {
+                        return 1;
+                    } else {
+                        return n * factorial(n - 1);
+                    }
+                }
+            }
+            let numeroF = parseFloat(document.getElementById('numFactorial').value);
+            let factor = factorial(numeroF);
+
+            document.getElementById('impresoFactorial').innerHTML = (`El factor de ${numeroF} es ${factor}`);
+
+        })
+
+        //CALCULO DEL RADIO
+
+
+        document.getElementById('buttonCirculo').addEventListener('click', () => {
+
+            /*La siguiente función utiliza Math.PI para calcular la longitud de la circunferencia de un circulo mediante el radio del circulo proporcionado como parametro
+            
+            sintaxis:
+
+            function calculaCircunferencia(radio){
+                return 2* math.PI * radio;
+            }   
+            
+            llamamos a la función
+            calculaCircunferencia()
+            
+            */
+
+            function circulo(radio) {
+                return 2 * Math.PI * radio
+            }
+
+            let numeroC = document.getElementById('numCirculo').value;
+            let areaCirculo = circulo(numeroC);
+
+            document.getElementById('impresoCirculo').innerHTML = (`El área del círculo con radio de ${numeroC} cm, es ${areaCirculo}cm.`);
+
+        })
+
+        let login = [];
+        let usuarios = '';
+
+        document.getElementById('buttonLogin').addEventListener('click', (e) => {
+
+            function loginUsuarios(usuario, contraseña) {
+                login.push(`${usuario},${contraseña}`);
+
+                for (var i = 0; i < login.length; i++) {
+                    usuarios = login;
+                };
+
+                return usuarios
+            }
+            let usuariosGuardados = (loginUsuarios(document.getElementById('usuarioT').value, document.getElementById('contraseñaT').value));
+            console.log(usuariosGuardados);
+
+            document.getElementById('verificarLogin').addEventListener('click', (e) => {
+
+                function comprobarUsuario(usuarioIngresados, loginUsuario) {
+
+                    if (usuarioIngresados.indexOf(loginUsuario) === -1) {
+                        resultado = (' Usuario y/o contraseña incorrecta')
+                    } else if (usuarioIngresados.indexOf(loginUsuario) > -1) {
+                        resultado = (`Bienvenido estimado usuario`)
+                    }
+                    return resultado
+                }
+
+                let usuarioNuevo = (`${document.getElementById('usuarioT').value},${document.getElementById('contraseñaT').value}`);
+
+                console.log(usuarioNuevo);
+
+                document.getElementById('impresoVLogin').innerHTML = (comprobarUsuario(usuariosGuardados, usuarioNuevo))
+            })
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>formulario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="validar.css" rel="stylesheet">
+    <script src="formArray.js"></script>
+</head>
+
+<body>
+    <h1>Formulario</h1>
+
+    <form action="procesar.php" method="post" id="miFormulario">
+        <table>
+            <tr>
+                <td>Nombre: </td>
+                <td>
+                    <input type="text" name="nombre" id="nombre" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Apellido: </td>
+                <td>
+                    <input type="text" name="apellido" id="apellido" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email: </td>
+                <td>
+                    <input type="email" name="email" id="email" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mayor de 18: </td>
+
+                <td>
+                    <input type="checkbox" name="mayor" id="mayor" checked />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>Pais: </td>
+                <td>
+                    <select id="paises" required="required">
+                    <option value="selecciona">Selecciona</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="peru">Perú</option>
+                    <option value="venezuela">Venezuela</option>
+                    <option value="bolivia">Bolivia</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="estados-unidos">Estados Unidos</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="canada">Canada</option>
+                    <option value="otro">otro</option>
+                </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Sexo: </td>
+                <td>
+                    <label id="H">Hombre
+                    <input type="radio" name="hombre" id="H" />
+                </label>
+
+                    <label id="M">Mujer
+                    <input type="radio" name="mujer" id="M" checked/>
+                </label>
+
+                    <label id="N">Prefiero no decir
+                    <input type="radio" name="mujer" id="N"/>
+                </label>
+                </td>
+            </tr>
+        </table>
+
+        <fieldset>
+            <legend>Hobbies</legend>
+            <label id="dibujar"> Dibujar
+                    <input type="checkbox" name="dibujar" id="dibujar" />
+                </label>
+            <label id="tv"> Ver tv
+                    <input type="checkbox" name="tv" id="tv" />
+                </label>
+            <label id="dormir"> Dormir
+                    <input type="checkbox" name="dormir" id="dormir" />
+                </label>
+            <label id="comer"> Comer
+                    <input type="checkbox" name="comer" id="comer" />
+                </label>
+            <label id="cocinar"> Cocinar
+                    <input type="checkbox" name="cocinar" id="cocinar" />
+                </label>
+            <label id="leer"> Leer
+                    <input type="checkbox" name="leer" id="leer" />
+                </label>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="enviar" id="enviar" />
+        </p>
+    </form>
+
+
+</body>
+
+</html>

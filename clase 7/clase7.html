@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos JS</title>
+</head>
+
+<body>
+    <h1>Objetos en JS</h1>
+
+    <script>
+        let carro = {
+            marca: "BMW",
+            modelo: "x5",
+            anio: 2021,
+            color: "azul",
+            edad: function() {
+                return 2021 - this.anio;
+            }
+        };
+
+        console.log(carro);
+
+
+        //creación de un objeto usando metodo
+
+        function Usuario(nombreUsuario, nombre, apellido, email, password) {
+            this.nombreUsuario = nombreUsuario;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.email = email;
+            this.password = password;
+            this.nombreFuncion = function() {
+                console.log("esto es una función creada desde un molde");
+            }
+
+        }
+
+        let usuario1 = new Usuario("LinaMagu14", "Lina Maria", "Guerrero Lopez", "linahol@gmail.com", "12345");
+
+        console.log(usuario1);
+        console.log(usuario1.apellido);
+        console.log(usuario1.nombreFuncion());
+
+        //creación de un objeto usando una clase
+
+        class Motos {
+            //creación de propiedades
+            constructor(marca, modelo, color, anio, cilindraje) {
+                this.marca = marca;
+                this.modelo = modelo;
+                this.color = color;
+                this.anio = anio;
+                this.cilindraje = cilindraje;
+            }
+
+            obtenerNombre() {
+                return `la moto marca ${this.marca} con un cilindraje ${this.cilindraje}`;
+            }
+
+            establecerNombre(nombre) {
+                this.marca = nombre;
+            }
+        }
+
+        const honda = new Moto("Honda", "CBR", "Negro", 2021, 200);
+        honda.establecerNombre("honda");
+        console.log(honda);
+        console.log(honda.obtenerNombre());
+    </script>
+
+</body>
+
+</html>

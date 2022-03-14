@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays y ciclos</title>
+</head>
+
+<body>
+    <h1>Arrays y clases con JS</h1>
+
+    <script>
+        //Ciclo for
+
+        for (let indice = 0; indice < 10; indice = indice + 1) {
+            console.log(indice);
+        }
+        console.log("fin del ciclo");
+
+        var resultadoSuma = 0;
+        for (var i = 0; i < 5; i++) {
+            var numeroIngresado = (parseInt(prompt("Ingrese un numero para sumar")));
+            if (Number.isInteger(numeroVariable)) {
+                resultadoSuma += numeroIngresado
+            }
+        }
+
+        alert("La suma total es: ${resultadoSuma}");
+
+
+        //ciclo while
+
+        let indiceWhile = 0;
+
+        while (indiceWhile < 10) {
+            //codigo a repetir
+
+            console.log(indiceWhile);
+            indiceWhile = indiceWhile + 1;
+        }
+
+        let es_impar = false;
+        while (!es_impar) {
+            let ingreso = parseInt(prompt("ingrese numero par"));
+
+            if (Number.isInteger(ingreso)) {
+                let resto = ingreso % 2;
+                console.log(resto);
+                if (resto === 1) {
+                    console.log("es un numero impar");
+                    es_impar = true;
+                } else {
+                    console.log("es un numero par");
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

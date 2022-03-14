@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Por favor diligencie la fecha de expiración de su licencia (moto o carro):</p>
+
+    <label for="expira_lic">Fecha de expiración licencia</label>
+    <input type="date" id="expira_lic" requiered="requiered" min="2021-05-20" max=""></input> <br>
+
+    <pre id="salida"></pre>
+
+    <script>
+        let fechaValidar = new Date("2021/05/20");
+
+        document.getElementById("expira_lic").addEventListener("input", function(evt) {
+            let fechaIngresada = evt.target.value;
+
+            //valida?
+            if (fechaIngresada > fechaValidar) {
+                document.getElementById("salida").innerText = fechaIngresada;
+            } else {
+                document.getElementById("salida").innerText;
+                console.log("fecha no valida, renueve su licencia")
+            }
+        });
+    </script>
+</body>
+
+</html>

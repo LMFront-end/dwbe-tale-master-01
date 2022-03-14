@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Validar form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="Validarform1.js"></script>
+</head>
+<style>
+    .error {
+        border: solid 2px red;
+    }
+</style>
+
+<body>
+    <h1>Formulario</h1>
+    <form action="procesar.php" method="post" id="miFormulario">
+
+        <table>
+            <tr>
+                <td>Nombre: </td>
+                <td>
+                    <input type="text" name="nombre" id="nombre" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>telefono: </td>
+                <td>
+                    <input type="text" name="telefono" id="telefono" />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>Fecha de nacimiento: </td>
+
+                <td>
+                    <input type="text" name="dia" size="1" id="dia" />
+
+                    <input type="text" name="mes" size="1" id="mes" />
+
+                    <input type="text" name="año" size="4" id="año" />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>Sexo: </td>
+
+                <td>
+
+                    <input type="radio" name="M" id="mujer" size="4" />
+
+                    <input type="radio" name="H" id="hombre" size="4" checked />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>Mayor de 18: </td>
+
+                <td>
+                    <input type="checkbox" name="mayor" id="mayor" checked />
+                </td>
+
+            </tr>
+
+        </table>
+
+        <p>
+
+            <input type="submit" value="enviar" id="enviar" />
+
+            <input type="submit" value="borrar" id="borrar" />
+
+
+
+        </p>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>challenge</title>
+</head>
+
+<body>
+
+    <h1>challenge</h1>
+
+    <script>
+        //objetos literales
+
+        const estudiantes = {
+            estudio: " Desarrollo back-end",
+            nombres: ["Mafe", "Felipe", "Rafa", "Juan", "Santiago", "Isa", "Jairo", "Camila", "Bryan", "David", "Jair", "Nathan", "Hernan", "Marlon", "Mateo", "Lina"], //length: 16, proto: array
+            WhatsApp: "Backend Protalento",
+            //materias en comun XD
+            materias: {
+                Ingles: true,
+                Matematica: true,
+                Liderazgo: true,
+                Data: false
+            },
+            //this: hace referencia al objeto
+            nombrarEstudiantes: function() {
+                console.log(`hola somos estudiantes de ${this.estudio}. Aquí solo estamos algunos de los estudiantes ${this.nombres}, como no estamos todos, puedes contactarnos en el grupo de whatsApp ${this.WhatsApp}.`);
+            }
+        }
+
+        console.log(estudiantes);
+        console.log(estudiantes["nombres"]);
+        console.log(estudiantes["WhatsApp"]);
+        console.log(estudiantes.materias);
+        estudiantes.nombrarEstudiantes();
+
+
+        //Class constructor
+
+        class EstudianteBackend {
+
+            //Definir un constructor de un objeto y crear objetos del tipo construido.
+
+            constructor(nombre, ciudad, profesión) {
+                //this es el objeto que voy a crear
+                //atributo = especie
+
+                /*
+                    this (palabbra reservada):  
+                    -Hace referencia al propietario de la funcion que está invocandose.
+                    -Hace referencia al objeto donde la función es un metodo
+                */
+
+                /*
+                sintaxis constructor
+
+                function Persona(nom, ape, an) {
+                    this.nombre = nom;
+                    this.apellido = ape;
+                    this.ano = an;
+                    }
+                */
+                this.nombre = nombre;
+                this.ciudad = ciudad;
+                this.profesión = profesión;
+                //para mostrar la información 
+                this.info = `Hola me llamo ${this.nombre}, actualmente vivo en la ciudad de ${this.ciudad} y soy ${this.profesión}`;
+            }
+
+            //Los metodos es lo que podemos hacer (funcion dentro de una clase se le llama metodo)
+
+            //El this solo se utiliza para el costructor
+            verInformación = () => {
+                console.log(this.info);
+            }
+
+        }
+
+        //Definir y crear un objeto simple utilizando la palabra new.
+        /*Sintaxis
+            let persona2 = new Object();
+            persona2.nombre = "Mateo";
+            persona2.apellido = "Saavedra";
+            persona2.ano = 1992;
+        */
+        let Santiago = new EstudianteBackend("Santiago Valencia", "Pereira", "Ingeniero industrial");
+        let Andres = new EstudianteBackend("Andres Felipe", "Medellin", "Politólogo");
+        let Lina = new EstudianteBackend("Lina Guerrero", "Calarcá", "Ingeniera de Alimentos");
+
+        //llamar a la función verInformación();
+        Santiago.verInformación();
+        Andres.verInformación();
+        Lina.verInformación();
+    </script>
+
+</body>
+
+</html>

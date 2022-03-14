@@ -1,0 +1,15 @@
+1 cantarm
+2 bailarm
+3 jugarm
+4 dormirm
+5 ver tvm
+1 cantar
+2 bailar
+3 jugar
+4 dormir
+5 ver tv
+2 bailar
+1 cantar
+3 jugar
+4 dormir
+5 ver tv
